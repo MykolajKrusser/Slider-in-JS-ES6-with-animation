@@ -35,6 +35,7 @@ nextBtn.onclick = function next() { //function for "next" button to change links
         num = 0;
     }
     slide.src = images[num].url; //change link
+    slide.alt = images[num].text;//change alt
     let picNumber = num + 1;//picture number
 
     slideText.innerHTML = images[num].text; //change and display picture text
@@ -54,6 +55,7 @@ prevBtn.onclick = function prev() { //same function for prev button to change li
         num = images.length - 1;
     }
     slide.src = images[num].url;
+    slide.alt = images[num].text;//change alt
     let picNumber = num + 1;
 
     slideText.innerHTML = images[num].text;
@@ -81,6 +83,7 @@ dotsParent.onclick = function (e) { //function change picture link by click on d
     for(let i = 0; i < dotsParent.children.length; i++) { //fore all dots
         if(dotsParent.children[i] === target){ //which was clicked
             slide.src = images[i].url;//change picture link, number text and describe text
+            slide.alt = images[i].text;//change alt
             let picNumber = i + 1;
             slideText.innerHTML = images[i].text;
             slideNum.innerHTML =  picNumber + "/" + images.length;
